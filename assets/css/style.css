@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    margin-top: 70px;
+    padding: 20px;
+}
+
+section header {
+    display: flex;
+    justify-content: space-between;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+}
+
+main section {
+    border: 2px solid black;
+    max-width: 800px;
+    width: 80%;
+    height: 400px;
+}
+
+#first-page h1 {
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+#first-page p {
+    position: absolute;
+    left: 25%;
+}
+
+#first-page button {
+    position: absolute;
+    left: 45%;
+    margin-top: 8%;
+}
+
+#question {
+    display: none;
+}
