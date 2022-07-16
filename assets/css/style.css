@@ -29,7 +29,7 @@ main section {
     height: 400px;
 }
 
-#first-page {
+#page-one {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -37,26 +37,22 @@ main section {
     height: 80%;
 }
 
-#first-page h1 {
-
-}
-
-#first-page p {
+#page-one p {
     padding: 0 6%;
 }
 
-#first-page button {
+#page-one button {
     padding: 10px;
     color: white;
     background-color: blue;
 }
 
-#question-div {
+#page-two div {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#question, #scores {
+#page-two, #scores {
     display: none;
 }

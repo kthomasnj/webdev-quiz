@@ -13,27 +13,27 @@
     <main>
         <section>
             <header>
-                <a href="scores.html" scores">View Previous Scores</a>
-                <span id="timer">Time: 00</span>
+                <a href="scores.html" scores>View Previous Scores</a>
+                <span id="timer"></span>
             </header>
-            <div id="first-page">
+            <div id="page-one">
                 <h1>Web-Dev QUIZ</h1>
                 <p>Try to answer the following code-related questions within the time limit.
                     Keep in mind that incorrect answers will penalize your score/time
                     by ten seconds!</p>
-                <button>START QUIZ</button>
+                <button id="start-quiz">START QUIZ</button>
             </div>
-            <div id="question">
+            <div id="page-two">
                 <span id="questions"></span>
                 <ol>
-                    <li><span id="answer-one"></span></li>
-                    <li><span id="answer-two"></span></li>
-                    <li><span id="answer-three"></span></li>
-                    <li><span id="answer-four"></span></li>
+                    <button><span id="answer-one"></span></button>
+                    <button><span id="answer-two"></span></button>
+                    <button><span id="answer-three"></span></button>
+                    <button><span id="answer-four"></span></button>
                 </ol>
                 <div id="answer">
                     <hr>
-                    <span id="answer"></span>
+                    <span id="answers"></span>
                 </div>
             </div>
         </section>
