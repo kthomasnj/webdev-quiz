@@ -1,19 +1,27 @@
-/* * {
-    border: 2px solid red;
-} */
+* {
+    margin: 0;
+    padding: 0;
+}
 
-nav {
+a {
+    text-decoration: none;
+}
+
+section {
+    margin-top: 70px;
+    padding: 20px;
+}
+
+section header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 main {
-    margin: 10vh;
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
 }
 
-<<<<<<< HEAD
 main section {
     border: 2px solid black;
     max-width: 800px;
@@ -47,11 +55,4 @@ main section {
 
 #page-two, #scores {
     display: none;
-=======
-button {
-    background-color: purple;
-    color: white;
-    border-radius: 8px;
-    padding: 5px;
->>>>>>> 35e5c5d29d6b1e1aa6a9f0096d9debc67ead4296
 }

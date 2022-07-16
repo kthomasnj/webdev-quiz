@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var startQuizBtn = document.querySelector("#start-quiz");
 var pageOne = document.querySelector("#page-one");
 var pageTwo = document.querySelector("#page-two");
@@ -50,21 +49,3 @@ startQuizBtn.addEventListener("click", function () {
 
     startQuiz();
 })
-=======
-
-const handleClock = () => {
-    time--;
-    document.getElementById('timer').innerText = time;
-};
-
-const handleClick = () => {
-    var time = 60;
-
-    handleClock();
-    document.querySelector('main').innerHTML = '';
-};
-
-time
-document.querySelector("#start-quiz")
-    .addEventListener("click", handleClick)
->>>>>>> 35e5c5d29d6b1e1aa6a9f0096d9debc67ead4296
