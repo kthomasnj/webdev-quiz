@@ -10,34 +10,18 @@
 </head>
 
 <body>
-    <main>
-        <section>
-            <header>
+            <nav>
                 <a href="scores.html" scores">View Previous Scores</a>
-                <span id="timer">Time: 00</span>
-            </header>
-            <div id="first-page">
+                <h4>Time: <span id="timer">00</span></h4>
+            </nav>
+            <main >
                 <h1>Web-Dev QUIZ</h1>
                 <p>Try to answer the following code-related questions within the time limit.
                     Keep in mind that incorrect answers will penalize your score/time
                     by ten seconds!</p>
-                <button>START QUIZ</button>
-            </div>
-            <div id="question">
-                <span id="questions"></span>
-                <ol>
-                    <li><span id="answer-one"></span></li>
-                    <li><span id="answer-two"></span></li>
-                    <li><span id="answer-three"></span></li>
-                    <li><span id="answer-four"></span></li>
-                </ol>
-                <div id="answer">
-                    <hr>
-                    <span id="answer"></span>
-                </div>
-            </div>
-        </section>
-    </main>
+                <button id="start-quiz">START QUIZ</button>
+            </main>
+    <script src="./assets/js/questions.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 
