@@ -1,19 +1,28 @@
-/* * {
-    border: 2px solid red;
-} */
+* {
+    margin: 0;
+    padding: 0;
+    /* border: 2px solid red; */
+}
 
-nav {
+a {
+    text-decoration: none;
+}
+
+section {
+    margin-top: 70px;
+    padding: 20px;
+}
+
+section header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 main {
-    margin: 10vh;
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
 }
 
-<<<<<<< HEAD
 main section {
     border: 2px solid black;
     max-width: 800px;
@@ -21,7 +30,7 @@ main section {
     height: 400px;
 }
 
-#page-one {
+#first-page {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -29,29 +38,31 @@ main section {
     height: 80%;
 }
 
-#page-one p {
+#first-page p {
     padding: 0 6%;
 }
 
-#page-one button {
+#first-page button {
     padding: 10px;
     color: white;
     background-color: blue;
 }
 
-#page-two div {
+#question {
+    flex-direction: column;
+}
+
+#question ol {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#page-two, #scores {
+#question, #scores {
     display: none;
-=======
-button {
-    background-color: purple;
-    color: white;
-    border-radius: 8px;
-    padding: 5px;
->>>>>>> 35e5c5d29d6b1e1aa6a9f0096d9debc67ead4296
+}
+
+ol {
+    display: flex;
+    flex-direction: column;
 }
