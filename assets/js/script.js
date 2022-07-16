@@ -2,15 +2,26 @@ var startQuizBtn = document.querySelector("#start-quiz");
 var pageOne = document.querySelector("#page-one");
 var pageTwo = document.querySelector("#page-two");
 var clock = document.querySelector("#timer");
+var time = 5;
 var questionsSpan = document.querySelector("#questions");
-var questions = ["Question 1", "Question 2", "Question 3", "Questioon 4"];
+var quizQuestions = ["Question 1", "Question 2", "Question 3", "Questioon 4"];
 var answerOptionsQ1 = ["Red", "Blue", "Green", "Yellow"];
 var answerOptionsQ2 = ["Black", "Brown", "Teal", "Gray"];
 var answerOptionsQ3 = ["White", "Light Grey", "Silver", "Gold"];
 var answerOptionsQ4 = ["Peach", "Orange", "Pink", "Aqua"];
 
-function startQuiz () {
-    console.log("It worked!!!");
+function startQuiz() {
+    setInterval(function () {
+        if (time > 0) {
+            clock.textContent = "Timer: " + time;
+            time--;
+        } else if (time === 0) {
+            clock.textContent = "Timer: " + time;
+            time--;
+        } else {
+            return questionsSpan.textContent = "QUIZ OVER!!!"
+        }
+    }, 1000);
 }
 
 
@@ -31,7 +42,7 @@ function startQuiz () {
 //         time--;
 
 //         console.log(time);
-    
+
 //     } else if (time === 0) {
 //         timeRemaining.innerHTML = "TIMES UP";
 //     }
