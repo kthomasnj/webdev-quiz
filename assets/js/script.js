@@ -8,7 +8,7 @@ var pageThree = document.querySelector("#page-three");
 var clock = document.querySelector("#timer");
 var currentScore = document.querySelector("#score-span");
 var score = 0;
-var time = 5;
+var time = 2;
 
 function startTimer() {
     setInterval(function () {
