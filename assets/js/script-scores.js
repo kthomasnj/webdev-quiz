@@ -3,17 +3,17 @@ var showScore = document.querySelector("#score-span");
 var submitBtn = document.querySelector("#submit");
 var resultsSpan = document.querySelector("#results")
 var resetScoresBtn = document.querySelector("#clear");
-var currentScoreStorage = localStorage.getItem('score');
+var currentScoreStorage = localStorage.getItem('currentScore');
+var storedScores = JSON.parse(localStorage.getItem("score") || "[]");
+
 
 returnBtn.addEventListener("click", function () {
     window.location = "index.html";
 });
 
 function quizScores() {
-    var storedScores = Object.entries(localStorage);
-
     for (var i = 0; i < storedScores.length; i++) {
-        resultsSpan.append(storedScores[i]);
+        resultsSpan.append(storedScores[i].initials + ": " + storedScores[i].score);
     }
 }
 
@@ -25,9 +25,10 @@ submitBtn.addEventListener("click", function (event) {
     if (playerCredentials === "") {
         alert("Initial cannot be blank");
     } else {
-        localStorage.setItem(playerCredentials, localStorage.getItem('score'));
+        storedScores.push({initials: playerCredentials, score: localStorage.getItem("currentScore")});     
+        localStorage.setItem("score", JSON.stringify(storedScores));
 
-        resultsSpan.append(playerCredentials + " " + currentScoreStorage);
+        resultsSpan.append("<li>" + playerCredentials + ": " + currentScoreStorage + "</li>");
     }
 })
 

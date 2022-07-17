@@ -37,7 +37,7 @@ function displayQuestion() {
 }
 
 function scoreLocalStorage() {
-    localStorage.setItem("score", score);
+    localStorage.setItem("currentScore", score);
 }
 
 function finalScore() {
