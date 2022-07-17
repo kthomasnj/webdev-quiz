@@ -5,26 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style-scores.css">
     <title>Web-Dev QUIZ</title>
 </head>
-
 <body>
     <main>
-        <section>
-            <div id="input">
-                <h1>Complete</h1>
-                <p>Your final score is <span id="score">22</span></p>
-                <input placeholder="Enter Credentials"><button>SUBMIT</button>
-            </div>
+        <section id="scores-page">
+            <h1>QUIZ COMPLETED!</h1>
+            <p>Your final score is <span id="score-span"></span></p>
+            <input placeholder="Enter Credentials"><button>SUBMIT</button>
             <div id="scores">
                 <h1>High Scores</h1>
                 <span id="results"></span>
-                <button>Go Back</button><button>Clear Scores</button>
+                <button id="return">Go Back</button><button>Clear Scores</button>
             </div>
         </section>
     </main>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/script-scores.js"></script>
 </body>
-
 </html>

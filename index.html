@@ -11,11 +11,11 @@
 
 <body>
     <main>
-        <section>
-            <header>
+        <section id="main-page">
+            <nav>
                 <a href="scores.html" scores>View Previous Scores</a>
                 <span id="timer"></span>
-            </header>
+            </nav>
             <div id="page-one">
                 <h1>Web-Dev QUIZ</h1>
                 <p>Try to answer the following code-related questions within the time limit.
@@ -24,17 +24,22 @@
                 <button id="start-quiz">START QUIZ</button>
             </div>
             <div id="page-two">
-                <span id="questions"></span>
-                <ol>
-                    <button><span id="answer-one"></span></button>
-                    <button><span id="answer-two"></span></button>
-                    <button><span id="answer-three"></span></button>
-                    <button><span id="answer-four"></span></button>
+                <h1 id="question"></h1>
+                <ol id="options">
+                    <button id="option-one"></button>
+                    <button id="option-two"></button>
+                    <button id="option-three"></button>
+                    <button id="opton-four"></button>
                 </ol>
-                <div id="answer">
-                    <hr>
-                    <span id="answers"></span>
+            </div>
+            <div id="page-three">
+                <div>
+                    <h1 id="results-header"></h1>
                 </div>
+            </div>
+            <div id="answer">
+                <hr>
+                <span id="answers">answer</span>
             </div>
         </section>
     </main>
