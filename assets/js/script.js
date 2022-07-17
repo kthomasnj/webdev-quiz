@@ -13,7 +13,7 @@ var questionsArray = ["Commonly used data types DO Not include:",
     "String values must be enclosed within ______ when being assigned to variables.",
     "A very useful tool used during development and debugging for printing content to the debugger is:"];
 var score = 0;
-var time = 1;
+var time = 0;
 
 function startTimer() {
     setInterval(function () {
@@ -36,6 +36,10 @@ function displayQuestion() {
     }
 }
 
+function scoreLocalStorage() {
+    localStorage.setItem("score", score);
+}
+
 function finalScore() {
     window.location = "scores.html";
 }
@@ -46,4 +50,6 @@ startQuizBtn.addEventListener("click", function () {
 
     displayQuestion();
     startTimer();
-    });
+});
+
+scoreLocalStorage();
