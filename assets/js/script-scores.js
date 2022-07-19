@@ -7,8 +7,9 @@ var currentScoreStorage = localStorage.getItem('currentScore');
 var storedScores = JSON.parse(localStorage.getItem("score") || "[]");
 
 returnBtn.addEventListener("click", function () {
+    localStorage.removeItem("currentScore");
     window.location = "index.html";
-});
+})
 
 function quizScores() {
     for (var i = 0; i < storedScores.length; i++) {
@@ -38,7 +39,7 @@ submitBtn.addEventListener("click", function (event) {
 resetScoresBtn.addEventListener("click", function (event) {
     console.log(resetScoresBtn);
     resultsSpan.textContent = " ";
-    localStorage.clear();
+    localStorage.removeItem("score");
 })
 
 showScore.textContent = currentScoreStorage;

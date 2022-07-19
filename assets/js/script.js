@@ -7,6 +7,7 @@ var pageTwo = document.querySelector("#page-two");
 var pageThree = document.querySelector("#page-three");
 var clock = document.querySelector("#timer");
 var currentScore = document.querySelector("#score-span");
+var questionResult = document.querySelector("#question-result");
 
 var optionOne = document.querySelector("#option-one");
 var optionTwo = document.querySelector("#option-two");
@@ -14,32 +15,44 @@ var optionThree = document.querySelector("#option-three");
 var optionFour = document.querySelector("#option-four");
 
 var questionArray = [{
-    Question: "Commonly used data types DO Not include",
-    Options: ["strings", "booleans", "alerts", "numbers"],
-    Answer: "Alerts"
+    Question: "1) Commonly used data types DO Not include",
+    Option1: "strings",
+    Option2: "booleans",
+    Option3: "alerts",
+    Option4: "numbers",
+    Answer: "Option2"
 },
 {
-    Question: "The condition in an if/else statement is enclosed with ______.",
-    Options: ["quotes", "curly brackets", "parenthesis", "square brackets"],
-    Answer: "parenthesis"
+    Question: "2) The condition in an if/else statement is enclosed with ______.",
+    Option1: "quotes",
+    Option2: "curly brackets",
+    Option3: "parenthesis",
+    Option4: "square brackets",
+    Answer: "Option3"
 },
 {
-    Question: "Arrays in JavaScript can be used to store ________.",
+    Question: "3) Arrays in JavaScript can be used to store ________.",
     Option1: "numbers of strings",
-    Option2: "other arrays", 
-    Option3: "Booleans", 
+    Option2: "other arrays",
+    Option3: "Booleans",
     Option4: "all of the above",
-    Answer: "Answer: all of the above"
+    Answer: "Option4"
 },
 {
-    Question: "String values must be enclosed within ______ when being assigned to variables.",
-    Options: ["commas", "curly brackets", "quotes", "parenthesis"],
-    Answer: "parenthesis"
+    Question: "4) String values must be enclosed within ______ when being assigned to variables.",
+    Option1: "commas",
+    Option2: "curly brackets",
+    Option3: "quotes",
+    Option4: "parenthesis",
+    Answer: "Option4"
 },
 {
-    Question: "A very useful tool used during development and debugging for printing content to the debugger is:",
-    Options: ["JavaScript", "terminal/bash", "for loops", "console.log"],
-    Answer: "console.log"
+    Question: "5) A very useful tool used during development and debugging for printing content to the debugger is:",
+    Option1: "JavaScript",
+    Option2: "terminal/bash",
+    Option3: "for loops",
+    Option4: "console.log",
+    Answer: "Option4"
 }];
 
 var score = 0;
@@ -61,6 +74,130 @@ function startTimer() {
     }, 1000);
 }
 
+function addQuestion2() {
+    questions.textContent = questionArray[1].Question;
+    optionOne.textContent = questionArray[1].Option1;
+    optionTwo.textContent = questionArray[1].Option2;
+    optionThree.textContent = questionArray[1].Option3;
+    optionFour.textContent = questionArray[1].Option4;
+
+    optionOne.addEventListener("click", function () {
+        time = time - 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion3();
+    })
+    optionTwo.addEventListener("click", function () {        
+        time = time - 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion3();
+    })
+    optionThree.addEventListener("click", function () {
+        console.log("2.Before Score: " + score);
+        score = score + 20;
+        console.log(score);
+        questionResult.textContent = "Correct!!! Score: " + score;
+        addQuestion3();
+    })
+    optionFour.addEventListener("click", function () {
+        time = time - 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion3();                
+    })
+}
+
+function addQuestion3() {
+    questions.textContent = questionArray[2].Question;
+    optionOne.textContent = questionArray[2].Option1;
+    optionTwo.textContent = questionArray[2].Option2;
+    optionThree.textContent = questionArray[2].Option3;
+    optionFour.textContent = questionArray[2].Option4;
+
+    optionOne.addEventListener("click", function () {
+        time = time - 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion4();
+    })
+    optionTwo.addEventListener("click", function () {        
+        time = time - 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion4();
+    })
+    optionThree.addEventListener("click", function () {
+        time = time - 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion4();
+    })
+    optionFour.addEventListener("click", function () {
+        console.log("3.Before Score: " + score);
+        score = score + 20;
+        console.log(score);
+        questionResult.textContent = "Correct!!! Score: " + score;
+        addQuestion4();
+    })
+}
+
+function addQuestion4() {
+    questions.textContent = questionArray[3].Question;
+    optionOne.textContent = questionArray[3].Option1;
+    optionTwo.textContent = questionArray[3].Option2;
+    optionThree.textContent = questionArray[3].Option3;
+    optionFour.textContent = questionArray[3].Option4;
+
+    optionOne.addEventListener("click", function () {
+        time = time - 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion5();
+    })
+    optionTwo.addEventListener("click", function () {        
+        time = time - 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion5();
+    })
+    optionThree.addEventListener("click", function () {
+        time = time - 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion5();
+    })
+    optionFour.addEventListener("click", function () {
+        console.log("4.Before Score: " + score);
+        score = time + 20;
+        console.log(score);
+        questionResult.textContent = "Correct!!! Score: " + score;
+        addQuestion5();        
+    })
+}
+
+function addQuestion5() {
+    questions.textContent = questionArray[4].Question;
+    optionOne.textContent = questionArray[4].Option1;
+    optionTwo.textContent = questionArray[4].Option2;
+    optionThree.textContent = questionArray[4].Option3;
+    optionFour.textContent = questionArray[4].Option4;
+
+    optionOne.addEventListener("click", function () {
+        time = time - 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        quizComplete();
+    })
+    optionTwo.addEventListener("click", function () {        
+        time = time - 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        quizComplete();
+    })
+    optionThree.addEventListener("click", function () {
+        time = time - 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        quizComplete();
+    })
+    optionFour.addEventListener("click", function () {
+        console.log("5.Before Score: " + score);
+        score = score + 20;
+        console.log(score);
+        questionResult.textContent = "Correct!!! Score: " + score;
+        quizComplete();        
+    })
+}
+
 function scoreLocalStorage() {
     localStorage.setItem("currentScore", score);
 }
@@ -74,37 +211,34 @@ startQuizBtn.addEventListener("click", function () {
     pageOne.style.display = "none";
     pageTwo.style.display = "flex";
 
-    var currentQuestionArray = [];
-
-    // var i = 0;
-    //     if (i < 5) {
-    //         questions.textContent = questionOneArray[0];
-    //         optionOne.textContent = questionOneArray[1];
-    //         optionTwo.textContent = questionOneArray[2];
-    //         optionThree.textContent = questionOneArray[3];
-    //         optionFour.textContent = questionOneArray[4];
-    //     }
+    questions.textContent = questionArray[0].Question;
+    optionOne.textContent = questionArray[0].Option1;
+    optionTwo.textContent = questionArray[0].Option2;
+    optionThree.textContent = questionArray[0].Option3;
+    optionFour.textContent = questionArray[0].Option4;
 
     optionOne.addEventListener("click", function () {
-        console.log("Option 1 Clicked");
+        time = time - 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion2();
     })
     optionTwo.addEventListener("click", function () {
-        console.log("Option 2 Clicked");
+        console.log("1.Before Score: " + score);
+        score = score + 20;
+        console.log(score);
+        questionResult.textContent = "Correct!!! Score: " + score;
+        addQuestion2();
     })
     optionThree.addEventListener("click", function () {
-        console.log("Option 3 Clicked");
+        time = time - 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion2();
     })
     optionFour.addEventListener("click", function () {
-        console.log("Option 4 Clicked");
+        time = time - 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion2();
     })
 
-    for (i = 0; i < questionArray.length; i++) {
-        console.log(i);
-        questions.textContent = questionArray[i].Question;
-        optionOne.textContent = questionArray[i].Option1;
-        optionTwo.textContent = questionArray[i].Option2;
-        optionThree.textContent = questionArray[i].Option3;
-        optionFour.textContent = questionArray[i].Option4;
-    }
     startTimer();
 });
