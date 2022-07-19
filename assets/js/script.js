@@ -159,10 +159,6 @@ function addQuestion4() {
         addQuestion5();
     })
     optionFour.addEventListener("click", function () {
-        if(event.target.id === myQuestions[3].correctAnswer) {
-            console.log("correct");
-            score += 20;
-            
         console.log("4.Before Score: " + score);
         score += 20;
         console.log(score);
