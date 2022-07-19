@@ -10,18 +10,6 @@ returnBtn.addEventListener("click", function () {
     window.location = "index.html";
 });
 
-// function quizScores() {
-//     var values = [],
-//     keys = Object.keys(localStorage),
-//         i = keys.length;
-
-//     while (i--) {
-//         values.push(localStorage.getItem("currentScore").length);
-//     }
-//     resultsSpan.textContent = values;
-//     console.log(values);
-// }
-
 function quizScores() {
     for (var i = 0; i < storedScores.length; i++) {
         var createELLi = document.createElement('li')
