@@ -82,24 +82,24 @@ function addQuestion2() {
     optionFour.textContent = questionArray[1].Option4;
 
     optionOne.addEventListener("click", function () {
-        time = time - 10;
+        time -= 10;
         questionResult.textContent = "Wrong! Score: " + score;
         addQuestion3();
     })
     optionTwo.addEventListener("click", function () {        
-        time = time - 10;
+        time -= 10;
         questionResult.textContent = "Wrong! Score: " + score;
         addQuestion3();
     })
     optionThree.addEventListener("click", function () {
         console.log("2.Before Score: " + score);
-        score = score + 20;
+        score += 20;
         console.log(score);
         questionResult.textContent = "Correct!!! Score: " + score;
         addQuestion3();
     })
     optionFour.addEventListener("click", function () {
-        time = time - 10;
+        time -= 10;
         questionResult.textContent = "Wrong! Score: " + score;
         addQuestion3();                
     })
@@ -113,23 +113,23 @@ function addQuestion3() {
     optionFour.textContent = questionArray[2].Option4;
 
     optionOne.addEventListener("click", function () {
-        time = time - 10;
+        time -= 10;
         questionResult.textContent = "Wrong! Score: " + score;
         addQuestion4();
     })
     optionTwo.addEventListener("click", function () {        
-        time = time - 10;
+        time -= 10;
         questionResult.textContent = "Wrong! Score: " + score;
         addQuestion4();
     })
     optionThree.addEventListener("click", function () {
-        time = time - 10;
+        time -= 10;
         questionResult.textContent = "Wrong! Score: " + score;
         addQuestion4();
     })
     optionFour.addEventListener("click", function () {
         console.log("3.Before Score: " + score);
-        score = score + 20;
+        score += 20;
         console.log(score);
         questionResult.textContent = "Correct!!! Score: " + score;
         addQuestion4();
@@ -144,23 +144,27 @@ function addQuestion4() {
     optionFour.textContent = questionArray[3].Option4;
 
     optionOne.addEventListener("click", function () {
-        time = time - 10;
+        time -= 10;
         questionResult.textContent = "Wrong! Score: " + score;
         addQuestion5();
     })
     optionTwo.addEventListener("click", function () {        
-        time = time - 10;
+        time -= 10;
         questionResult.textContent = "Wrong! Score: " + score;
         addQuestion5();
     })
     optionThree.addEventListener("click", function () {
-        time = time - 10;
+        time -= 10;
         questionResult.textContent = "Wrong! Score: " + score;
         addQuestion5();
     })
     optionFour.addEventListener("click", function () {
+        if(event.target.id === myQuestions[3].correctAnswer) {
+            console.log("correct");
+            score += 20;
+            
         console.log("4.Before Score: " + score);
-        score = time + 20;
+        score += 20;
         console.log(score);
         questionResult.textContent = "Correct!!! Score: " + score;
         addQuestion5();        
@@ -175,23 +179,23 @@ function addQuestion5() {
     optionFour.textContent = questionArray[4].Option4;
 
     optionOne.addEventListener("click", function () {
-        time = time - 10;
+        time -= 10;
         questionResult.textContent = "Wrong! Score: " + score;
         quizComplete();
     })
     optionTwo.addEventListener("click", function () {        
-        time = time - 10;
+        time -= 10;
         questionResult.textContent = "Wrong! Score: " + score;
         quizComplete();
     })
     optionThree.addEventListener("click", function () {
-        time = time - 10;
+        time -= 10;
         questionResult.textContent = "Wrong! Score: " + score;
         quizComplete();
     })
     optionFour.addEventListener("click", function () {
         console.log("5.Before Score: " + score);
-        score = score + 20;
+        score += 20;
         console.log(score);
         questionResult.textContent = "Correct!!! Score: " + score;
         quizComplete();        
@@ -218,24 +222,24 @@ startQuizBtn.addEventListener("click", function () {
     optionFour.textContent = questionArray[0].Option4;
 
     optionOne.addEventListener("click", function () {
-        time = time - 10;
+        time -= 10;
         questionResult.textContent = "Wrong! Score: " + score;
         addQuestion2();
     })
     optionTwo.addEventListener("click", function () {
         console.log("1.Before Score: " + score);
-        score = score + 20;
+        score += 20;
         console.log(score);
         questionResult.textContent = "Correct!!! Score: " + score;
         addQuestion2();
     })
     optionThree.addEventListener("click", function () {
-        time = time - 10;
+        time -= 10;
         questionResult.textContent = "Wrong! Score: " + score;
         addQuestion2();
     })
     optionFour.addEventListener("click", function () {
-        time = time - 10;
+        time -= 10;
         questionResult.textContent = "Wrong! Score: " + score;
         addQuestion2();
     })
