@@ -14,6 +14,26 @@ var optionTwo = document.querySelector("#option-two");
 var optionThree = document.querySelector("#option-three");
 var optionFour = document.querySelector("#option-four");
 
+var optionQ2One = document.querySelector("#option-one");
+var optionQ2Two = document.querySelector("#option-two");
+var optionQ2Three = document.querySelector("#option-three");
+var optionQ2Four = document.querySelector("#option-four");
+
+var optionQ3One = document.querySelector("#option-one");
+var optionQ3Two = document.querySelector("#option-two");
+var optionQ3Three = document.querySelector("#option-three");
+var optionQ3Four = document.querySelector("#option-four");
+
+var optionQ4One = document.querySelector("#option-one");
+var optionQ4Two = document.querySelector("#option-two");
+var optionQ4Three = document.querySelector("#option-three");
+var optionQ4Four = document.querySelector("#option-four");
+
+var optionQ5One = document.querySelector("#option-one");
+var optionQ5Two = document.querySelector("#option-two");
+var optionQ5Three = document.querySelector("#option-three");
+var optionQ5Four = document.querySelector("#option-four");
+
 var questionArray = [{
     Question: "1) Commonly used data types DO Not include",
     Option1: "strings",
@@ -56,10 +76,10 @@ var questionArray = [{
 }];
 
 var score = 0;
-var time = 5;
+var time = 0;
 
 function startTimer() {
-    var time = 60;
+    time = 400;
     setInterval(function () {
         if (time > 0) {
             clock.textContent = "Timer: " + time;
@@ -68,135 +88,11 @@ function startTimer() {
             clock.textContent = "Timer: " + time;
             time--;
         } else {
-            return quizComplete();
+            // return quizComplete();
 
         }
     }, 1000);
-}
-
-function addQuestion2() {
-    questions.textContent = questionArray[1].Question;
-    optionOne.textContent = questionArray[1].Option1;
-    optionTwo.textContent = questionArray[1].Option2;
-    optionThree.textContent = questionArray[1].Option3;
-    optionFour.textContent = questionArray[1].Option4;
-
-    optionOne.addEventListener("click", function () {
-        time -= 10;
-        questionResult.textContent = "Wrong! Score: " + score;
-        addQuestion3();
-    })
-    optionTwo.addEventListener("click", function () {        
-        time -= 10;
-        questionResult.textContent = "Wrong! Score: " + score;
-        addQuestion3();
-    })
-    optionThree.addEventListener("click", function () {
-        console.log("2.Before Score: " + score);
-        score += 20;
-        console.log(score);
-        questionResult.textContent = "Correct!!! Score: " + score;
-        addQuestion3();
-    })
-    optionFour.addEventListener("click", function () {
-        time -= 10;
-        questionResult.textContent = "Wrong! Score: " + score;
-        addQuestion3();                
-    })
-}
-
-function addQuestion3() {
-    questions.textContent = questionArray[2].Question;
-    optionOne.textContent = questionArray[2].Option1;
-    optionTwo.textContent = questionArray[2].Option2;
-    optionThree.textContent = questionArray[2].Option3;
-    optionFour.textContent = questionArray[2].Option4;
-
-    optionOne.addEventListener("click", function () {
-        time -= 10;
-        questionResult.textContent = "Wrong! Score: " + score;
-        addQuestion4();
-    })
-    optionTwo.addEventListener("click", function () {        
-        time -= 10;
-        questionResult.textContent = "Wrong! Score: " + score;
-        addQuestion4();
-    })
-    optionThree.addEventListener("click", function () {
-        time -= 10;
-        questionResult.textContent = "Wrong! Score: " + score;
-        addQuestion4();
-    })
-    optionFour.addEventListener("click", function () {
-        console.log("3.Before Score: " + score);
-        score += 20;
-        console.log(score);
-        questionResult.textContent = "Correct!!! Score: " + score;
-        addQuestion4();
-    })
-}
-
-function addQuestion4() {
-    questions.textContent = questionArray[3].Question;
-    optionOne.textContent = questionArray[3].Option1;
-    optionTwo.textContent = questionArray[3].Option2;
-    optionThree.textContent = questionArray[3].Option3;
-    optionFour.textContent = questionArray[3].Option4;
-
-    optionOne.addEventListener("click", function () {
-        time -= 10;
-        questionResult.textContent = "Wrong! Score: " + score;
-        addQuestion5();
-    })
-    optionTwo.addEventListener("click", function () {        
-        time -= 10;
-        questionResult.textContent = "Wrong! Score: " + score;
-        addQuestion5();
-    })
-    optionThree.addEventListener("click", function () {
-        time -= 10;
-        questionResult.textContent = "Wrong! Score: " + score;
-        addQuestion5();
-    })
-    optionFour.addEventListener("click", function () {
-        console.log("4.Before Score: " + score);
-        score += 20;
-        console.log(score);
-        questionResult.textContent = "Correct!!! Score: " + score;
-        addQuestion5();        
-    })
-}
-
-function addQuestion5() {
-    questions.textContent = questionArray[4].Question;
-    optionOne.textContent = questionArray[4].Option1;
-    optionTwo.textContent = questionArray[4].Option2;
-    optionThree.textContent = questionArray[4].Option3;
-    optionFour.textContent = questionArray[4].Option4;
-
-    optionOne.addEventListener("click", function () {
-        time -= 10;
-        questionResult.textContent = "Wrong! Score: " + score;
-        quizComplete();
-    })
-    optionTwo.addEventListener("click", function () {        
-        time -= 10;
-        questionResult.textContent = "Wrong! Score: " + score;
-        quizComplete();
-    })
-    optionThree.addEventListener("click", function () {
-        time -= 10;
-        questionResult.textContent = "Wrong! Score: " + score;
-        quizComplete();
-    })
-    optionFour.addEventListener("click", function () {
-        console.log("5.Before Score: " + score);
-        score += 20;
-        console.log(score);
-        questionResult.textContent = "Correct!!! Score: " + score;
-        quizComplete();        
-    })
-}
+}    
 
 function scoreLocalStorage() {
     localStorage.setItem("currentScore", score);
@@ -205,6 +101,106 @@ function scoreLocalStorage() {
 function quizComplete() {
     scoreLocalStorage();
     window.location = "scores.html";
+}
+
+function disableQ1Eventlisteners () {
+    optionOne.removeEventListener("click", function () {
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion4();
+    })
+    optionTwo.removeEventListener("click", function () {        
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion4();
+    })
+    optionThree.removeEventListener("click", function () {
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion4();
+    })
+    optionFour.removeEventListener("click", function () {
+        console.log("3.Before Score: " + score);
+        score += 20;
+        console.log(score);
+        questionResult.textContent = "Correct!!! Score: " + score;
+        addQuestion4();
+    })
+}
+
+function disableQ2Eventlisteners () {
+    optionQ2One.removeEventListener("click", function () {
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion3();
+    })
+    optionQ2Two.removeEventListener("click", function () {        
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion3();
+    })
+    optionQ2Three.removeEventListener("click", function () {
+        console.log("2.Before Score: " + score);
+        score += 20;
+        console.log(score);
+        questionResult.textContent = "Correct!!! Score: " + score;
+        addQuestion3();
+    })
+    optionQ2Four.removeEventListener("click", function () {
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion3();                
+    })
+}
+
+function disableQ3Eventlisteners () {
+    optionOne.removeEventListener("click", function () {
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion4();
+    })
+    optionQ3Two.removeEventListener("click", function () {        
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion4();
+    })
+    optionQ3Three.removeEventListener("click", function () {
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion4();
+    })
+    optionQ3Four.removeEventListener("click", function () {
+        console.log("3.Before Score: " + score);
+        score += 20;
+        console.log(score);
+        questionResult.textContent = "Correct!!! Score: " + score;
+        addQuestion4();
+    })
+}
+
+function disableQ4Eventlisteners () {
+    optionOne.removeEventListener("click", function () {
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion5();
+    })
+    optionQ4Two.removeEventListener("click", function () {        
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion5();
+    })
+    optionQ4Three.removeEventListener("click", function () {
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion5();
+    })
+    optionQ4Four.removeEventListener("click", function () {
+        console.log("4.Before Score: " + score);
+        score += 20;
+        console.log(score);
+        questionResult.textContent = "Correct!!! Score: " + score;
+        addQuestion5();        
+    })
 }
 
 startQuizBtn.addEventListener("click", function () {
@@ -241,4 +237,137 @@ startQuizBtn.addEventListener("click", function () {
     })
 
     startTimer();
+
+
+function addQuestion2() {
+    disableQ1Eventlisteners();
+
+    questions.textContent = questionArray[1].Question;
+    optionOne.textContent = questionArray[1].Option1;
+    optionTwo.textContent = questionArray[1].Option2;
+    optionThree.textContent = questionArray[1].Option3;
+    optionFour.textContent = questionArray[1].Option4;
+
+    optionQ2One.addEventListener("click", function () {
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion3();
+    })
+    optionQ2Two.addEventListener("click", function () {        
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion3();
+    })
+    optionQ2Three.addEventListener("click", function () {
+        console.log("2.Before Score: " + score);
+        score += 20;
+        console.log(score);
+        questionResult.textContent = "Correct!!! Score: " + score;
+        addQuestion3();
+    })
+    optionQ2Four.addEventListener("click", function () {
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion3();                
+    })
+}
+
+function addQuestion3() {
+    disableQ2Eventlisteners();
+
+    questions.textContent = questionArray[2].Question;
+    optionOne.textContent = questionArray[2].Option1;
+    optionTwo.textContent = questionArray[2].Option2;
+    optionThree.textContent = questionArray[2].Option3;
+    optionFour.textContent = questionArray[2].Option4;
+
+    optionOne.addEventListener("click", function () {
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion4();
+    })
+    optionQ3Two.addEventListener("click", function () {        
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion4();
+    })
+    optionQ3Three.addEventListener("click", function () {
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion4();
+    })
+    optionQ3Four.addEventListener("click", function () {
+        console.log("3.Before Score: " + score);
+        score += 20;
+        console.log(score);
+        questionResult.textContent = "Correct!!! Score: " + score;
+        addQuestion4();
+    })
+}
+
+function addQuestion4() {
+    disableQ3Eventlisteners();
+
+    questions.textContent = questionArray[3].Question;
+    optionOne.textContent = questionArray[3].Option1;
+    optionTwo.textContent = questionArray[3].Option2;
+    optionThree.textContent = questionArray[3].Option3;
+    optionFour.textContent = questionArray[3].Option4;
+
+    optionOne.addEventListener("click", function () {
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion5();
+    })
+    optionQ4Two.addEventListener("click", function () {        
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion5();
+    })
+    optionQ4Three.addEventListener("click", function () {
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        addQuestion5();
+    })
+    optionQ4Four.addEventListener("click", function () {
+        console.log("4.Before Score: " + score);
+        score += 20;
+        console.log(score);
+        questionResult.textContent = "Correct!!! Score: " + score;
+        addQuestion5();        
+    })
+}
+
+function addQuestion5() {
+    disableQ4Eventlisteners();
+
+    questions.textContent = questionArray[4].Question;
+    optionOne.textContent = questionArray[4].Option1;
+    optionTwo.textContent = questionArray[4].Option2;
+    optionThree.textContent = questionArray[4].Option3;
+    optionFour.textContent = questionArray[4].Option4;
+
+    optionQ5One.addEventListener("click", function () {
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        quizComplete();
+    })
+    optionQ5Two.addEventListener("click", function () {        
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        quizComplete();
+    })
+    optionQ5Three.addEventListener("click", function () {
+        time -= 10;
+        questionResult.textContent = "Wrong! Score: " + score;
+        quizComplete();
+    })
+    optionQ5Four.addEventListener("click", function () {
+        console.log("5.Before Score: " + score);
+        score += 20;
+        console.log(score);
+        questionResult.textContent = "Correct!!! Score: " + score;
+        quizComplete();        
+    })
+}
 });
