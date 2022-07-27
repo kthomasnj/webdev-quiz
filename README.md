@@ -31,18 +31,34 @@
 <br>
 
 ### Question Page
+
 ![Web APIs Challenge Mock-Up](./assets/images/mock-question.png)
 <br>
 
 ### Scores Page
+
 ![Web APIs Challenge Mock-Up](./assets/images/mock-scores.png)
 <br>
 
 ## Deployed Site
 ---
-![Web APIs Challenge Live Site Image](./assets/images/web-dev-live.png)
-
 https://kthomasnj.github.io/webdev-quiz/
+
+### Deployed Site Opening Page
+
+![Web APIs Challenge Live Site Image](./assets/images/web-dev-live.png)
+<br>
+
+### Deployed Site Question Page
+
+![Live site Question page](./assets/images/web-dev-live-question.png)
+<br>
+
+### Deployed Site Scores Page
+
+![Live site Scores Page](./assets/images/web-dev-live-scores.png)
+<br>
+
 <br>
 <br>
 <br>
